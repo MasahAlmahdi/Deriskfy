@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Dashboard from './components/Dashboard/Dashboard'
+import ActiveReports from './components/ActiveReports/ActiveReports';
+import LoginPage from './components/Login/Login';
+import ReportsHistory from './components/ReportsTable/ReportsHisory';
+import InstructionsTable from './components/Insctructions/InstructionsTable';
+import Layout from './components/Layout';
+import ReportDetails from './components/About/About';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<LoginPage/>}/>
+          <Route path="/about" element={<ReportDetails />} /> 
+          <Route element={<Layout />}>
+
+          <Route path="/dashboard" element={<Dashboard />} />
+          {/* <Route path="/stations" element={<Stations />} /> */}
+          <Route path="/active-reports" element={<ActiveReports />} />
+          <Route path="/reports-history" element={<ReportsHistory />} />
+          {/* <Route path="/settings" element={<Settings />} /> */}
+          {/* <Route path="/help" element={<Help />} /> */}
+          <Route path="/instructions" element={<InstructionsTable />} /> 
+
+          </Route>
+      </Routes>
+    </BrowserRouter>
+
   );
 }
 
