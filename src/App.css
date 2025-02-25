@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  transition: width 0.3s;
+}
+.sidebar.collapsed {
+  width: 80px;
+}
+
+/* Content styles */
+.content {
+  margin-left: 250px;
+  transition: margin-left 0.3s;
+}
+.sidebar.collapsed + .content {
+  margin-left: 0px;
+}

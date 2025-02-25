@@ -26,12 +26,12 @@ const menuItems = [
   },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isCollapsed, toggleSidebar }) {
   const [isExpanded, setIsExpanded] = useState(true);
   const [selectedItem, setSelectedItem] = useState("Dashboard");
 
   return (
-    <div className={`sidebar ${isExpanded ? "expanded" : "collapsed"}`}>
+    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
       <div className="sidebar-header">
         <img src={SettingIcon} alt="Settings" className="header-icon" />
         {isExpanded && <span className="dashboard-text">Dashboard</span>}
@@ -59,7 +59,8 @@ export default function Sidebar() {
         {isExpanded && <span className="profile-text">Khaled</span>}
       </div>
 
-      <button className="toggle-btn" onClick={() => setIsExpanded(!isExpanded)}>
+      <button className="toggle-btn" onClick={toggleSidebar}>
+        {/* {isCollapsed ? "Expand Sidebar" : "Collapse Sidebar"} */}
         <IoIosArrowForward className={`arrow ${isExpanded ? "rotated" : ""}`} />
       </button>
     </div>

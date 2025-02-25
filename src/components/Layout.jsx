@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 import Header from "./Header/Header";
+import "../App.css"; // Make sure to import the CSS file
 
 const Layout = () => {
+  const [isCollapsed, setIsCollapsed] = useState(false);
   const location = useLocation();
   const isLoginPage = location.pathname === "/login";
 
@@ -12,13 +14,14 @@ const Layout = () => {
   }
 
   return (
-    <div className="app-layout flex">
-      <Sidebar />
-      <div className="main-content flex-1">
-        <Header />
-        <div className="page-content p-4">
-          <Outlet />
-        </div>
+    <div className={`layout ${isCollapsed ? "collapsed" : ""}`}>
+      <Sidebar
+        isCollapsed={isCollapsed}
+        toggleSidebar={() => setIsCollapsed(!isCollapsed)}
+      />
+      <div className={`content ${isCollapsed ? "collapsed" : ""}`}>
+        <Header isCollapsed={isCollapsed} />
+        <Outlet />
       </div>
     </div>
   );

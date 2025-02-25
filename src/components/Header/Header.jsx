@@ -1,16 +1,10 @@
 import React from "react";
 import "./Header.css";
 
-export default function Header() {
+export default function Header({ isCollapsed }) {
   return (
-    <div className="global-header">
-      <h1 className="greeting">
-        Hello Khaled{" "}
-        <span role="img" aria-label="wave">
-          👋
-        </span>
-        ,
-      </h1>
+    <div className={`global-header ${isCollapsed ? "collapsed" : ""}`}>
+      <h1 className="greeting">Hello Khaled 👋,</h1>
 
       <div className="search-bar">
         <svg

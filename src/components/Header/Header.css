@@ -1,49 +1,73 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
 
 .global-header {
-    position: fixed;
-    top: 0px;
-    left: 377px;
-    width: 1050px;
-    height: 151px;
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 24px;
-    z-index: 100;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .greeting {
-    font-size: 24px;
-    font-weight: 500;
-    color: #000;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: white;
-    border-radius: 12px;
-    padding: 10px 16px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-  }
-  
-  .search-icon {
-    width: 24px;
-    height: 24px;
-    color: #a0a0a0;
-  }
-  
-  .search-input {
-    border: none;
-    outline: none;
-    margin-left: 8px;
+  width: calc(100% - 205px);
+  max-width: 1700px;
+  height: 151px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  font-family: "Poppins", sans-serif;
+  transition: width 0.3s, margin-left 0.3s;
+  margin-left: 130px;
+}
+
+.global-header.collapsed {
+  width: calc(100% - 205px);
+}
+
+.greeting {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 500;
+  color: #000;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 10px 16px;
+  box-shadow: 0px 10px 60px 0px #e2ecf980;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+  color: #a0a0a0;
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  width: 216px;
+  font-size: 14px;
+  color: #333;
+  background-color: transparent;
+}
+
+@media (max-width: 768px) {
+  .global-header {
+    height: auto;
+    flex-direction: column;
     width: 100%;
-    font-size: 14px;
-    color: #333;
-    background-color: transparent;
   }
-  
+
+  .greeting {
+    font-size: 20px;
+    margin-bottom: 8px;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin-left: 0;
+    position: static;
+    height: auto;
+  }
+}

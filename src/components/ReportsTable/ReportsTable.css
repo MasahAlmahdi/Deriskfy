@@ -1,96 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+
 .reports-table {
-    position: fixed;
-    top: 320px;
-    left: 400px;
-    width: 974px;
-    height: 550px;
-    background-color: #fff;
-    border-radius: 16px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    padding: 24px;
-    z-index: 99;
-    display: flex;
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 150px;
+  margin-top: 30px;
+  margin-right: 100px;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .reports-table {
+    padding: 16px;
+  }
+
+  .ant-table {
+    font-size: 12px;
+  }
+
+  .ant-pagination {
     flex-direction: column;
+    gap: 4px;
   }
-  
-  .reports-table h2 {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 8px;
-  }
-  
-  .active-reports {
-    color: #34c759;
-    margin-bottom: 20px;
-  }
-  
-  table {
-    width: 1000px;
-    border-collapse: collapse;
-  }
-  
-  thead {
-    background-color: #f8f8f8;
-  }
-  
-  th, td {
-    padding: 12px 16px;
-    text-align: left;
-    font-size: 14px;
-  }
-  
-  th {
-    color: #888;
-  }
-  
-  tbody tr {
-    border-bottom: 1px solid #e6e6e6;
-  }
-  
-  tbody tr:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .status-badge {
-    padding: 6px 12px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: bold;
-    color: white;
-  }
-  
-  .status-badge.accepted {
-    background-color: #34c759;
-  }
-  
-  .status-badge.rejected {
-    background-color: #ff3b30;
-  }
-  
-  .pagination {
-    display: flex;
-    gap: 8px;
-    margin-top: auto;
-    align-self: center;
-  }
-  
-  .pagination button {
-    padding: 8px 12px;
-    border: none;
-    background-color: #f0f0f0;
-    border-radius: 8px;
-    cursor: pointer;
-  }
-  
-  .pagination button.active {
-    background-color: #A81114;
-    color: white;
-  }
-  
-  .entries-info {
-    margin-top: 12px;
-    font-size: 12px;
-    color: #888;
-    text-align: center;
-  }
-  
+}
+
+.custom-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.page-btn {
+  background-color: white;
+  border: 1px solid #d9d9d9;
+  color: #333;
+  padding: 6px 12px;
+  margin: 0 4px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.page-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.page-btn.active {
+  background-color: #d32f2f;
+  color: white;
+  border-color: #d32f2f;
+}
+
+.filter-controls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.pag {
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.pagination-h {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+  align-self: center;
+}
+
+.pagination-h button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #404b52;
+}
+
+.pagination-h button.active {
+  background-color: #a81114;
+  color: white;
+}
+
+.entries-info-h {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+.add-instruction-btn {
+  margin-top: 20px;
+  align-self: flex-end;
+  border-radius: 12px;
+  padding: 10px 20px;
+  background-color: #a81114;
+  border: none;
+  font-weight: bold;
+  width: 151px;
+  height: 39px;
+}
+
+.add-instruction-btn:hover {
+  background-color: #a81114;
+}
+
+.ant-table-row:hover {
+  cursor: pointer;
+}
